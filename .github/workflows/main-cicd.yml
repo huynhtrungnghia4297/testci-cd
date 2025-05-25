@@ -11,9 +11,9 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  GATEWAY_IMAGE_NAME: ${{ github.repository }}/gateway-api
-  EMAIL_IMAGE_NAME: ${{ github.repository }}/email-service
-  AUTH_IMAGE_NAME: ${{ github.repository }}/auth-service
+  GATEWAY_IMAGE_NAME: ${{ format('{0}/{1}/gateway-api', 'ghcr.io', github.repository_owner) }}
+  EMAIL_IMAGE_NAME: ${{ format('{0}/{1}/email-service', 'ghcr.io', github.repository_owner) }}
+  AUTH_IMAGE_NAME: ${{ format('{0}/{1}/auth-service', 'ghcr.io', github.repository_owner) }}
 
 jobs:
   build-and-deploy:
